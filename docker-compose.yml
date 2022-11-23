@@ -5,9 +5,10 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      #- REDIS_PORT_NUMBER=6379
       - REDIS_PASSWORD=<PASSWORD>
     volumes:
       - /home/soda/redis:/bitnami/redis/data
+    ports:
+     - 6379:6379
 
     command: /opt/bitnami/scripts/redis/run.sh --maxmemory 512mb
